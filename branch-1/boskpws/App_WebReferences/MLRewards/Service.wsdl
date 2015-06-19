@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="MLhuillierRewards" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="MLhuillierRewards" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="MLhuillierRewards">
+      <s:element name="InquirePoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MLCardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Birthdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquirePointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InquirePointsResult" type="tns:InquireResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InquireResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="respcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="respmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MLCard_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName_" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPoints_" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MLCardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Birthdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Operator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemPointsResult" type="tns:RedeemResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="respcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="respmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MLCard_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RedeemCode_" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RedeemPoints_" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName_" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InquireCRMScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MLCardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Birthdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquireCRMScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InquireCRMScoreResult" type="tns:InquireScoreResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InquireScoreResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="respcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="respmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MLCard_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName_" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sendout_" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prenda_" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Lukat_" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Renew_" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rematado_" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalScore_" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rank_" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UndoRedemption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UndoRedemptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UndoRedemptionResult" type="tns:UnsuccessfulRedeem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnsuccessfulRedeem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="respcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="respmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RedeemCode_" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateMLCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MLCardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Birthdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMLCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMLCardResult" type="tns:UpdateNewMLCardResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateNewMLCardResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="respcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="respmsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MLCard_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName_" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InquireResponse" nillable="true" type="tns:InquireResponse" />
+      <s:element name="RedeemResponse" nillable="true" type="tns:RedeemResponse" />
+      <s:element name="InquireScoreResponse" nillable="true" type="tns:InquireScoreResponse" />
+      <s:element name="UnsuccessfulRedeem" nillable="true" type="tns:UnsuccessfulRedeem" />
+      <s:element name="UpdateNewMLCardResponse" nillable="true" type="tns:UpdateNewMLCardResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InquirePointsSoapIn">
+    <wsdl:part name="parameters" element="tns:InquirePoints" />
+  </wsdl:message>
+  <wsdl:message name="InquirePointsSoapOut">
+    <wsdl:part name="parameters" element="tns:InquirePointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemPoints" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:InquireCRMScore" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:InquireCRMScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionSoapIn">
+    <wsdl:part name="parameters" element="tns:UndoRedemption" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionSoapOut">
+    <wsdl:part name="parameters" element="tns:UndoRedemptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMLCard" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMLCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquirePointsHttpGetIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InquirePointsHttpGetOut">
+    <wsdl:part name="Body" element="tns:InquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsHttpGetIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="TransactionNo" type="s:string" />
+    <wsdl:part name="ReferenceNo" type="s:string" />
+    <wsdl:part name="Points" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="Operator" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsHttpGetOut">
+    <wsdl:part name="Body" element="tns:RedeemResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreHttpGetIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreHttpGetOut">
+    <wsdl:part name="Body" element="tns:InquireScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionHttpGetIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="RedeemCode" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionHttpGetOut">
+    <wsdl:part name="Body" element="tns:UnsuccessfulRedeem" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardHttpGetIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:UpdateNewMLCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquirePointsHttpPostIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InquirePointsHttpPostOut">
+    <wsdl:part name="Body" element="tns:InquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsHttpPostIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="TransactionNo" type="s:string" />
+    <wsdl:part name="ReferenceNo" type="s:string" />
+    <wsdl:part name="Points" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="Operator" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RedeemPointsHttpPostOut">
+    <wsdl:part name="Body" element="tns:RedeemResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreHttpPostIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InquireCRMScoreHttpPostOut">
+    <wsdl:part name="Body" element="tns:InquireScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionHttpPostIn">
+    <wsdl:part name="CustomerID" type="s:string" />
+    <wsdl:part name="RedeemCode" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UndoRedemptionHttpPostOut">
+    <wsdl:part name="Body" element="tns:UnsuccessfulRedeem" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardHttpPostIn">
+    <wsdl:part name="MLCardNo" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="MiddleName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Birthdate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMLCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:UpdateNewMLCardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MLRewardsRedeemSoap">
+    <wsdl:operation name="InquirePoints">
+      <wsdl:input message="tns:InquirePointsSoapIn" />
+      <wsdl:output message="tns:InquirePointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <wsdl:input message="tns:RedeemPointsSoapIn" />
+      <wsdl:output message="tns:RedeemPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <wsdl:input message="tns:InquireCRMScoreSoapIn" />
+      <wsdl:output message="tns:InquireCRMScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <wsdl:input message="tns:UndoRedemptionSoapIn" />
+      <wsdl:output message="tns:UndoRedemptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <wsdl:input message="tns:UpdateMLCardSoapIn" />
+      <wsdl:output message="tns:UpdateMLCardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MLRewardsRedeemHttpGet">
+    <wsdl:operation name="InquirePoints">
+      <wsdl:input message="tns:InquirePointsHttpGetIn" />
+      <wsdl:output message="tns:InquirePointsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <wsdl:input message="tns:RedeemPointsHttpGetIn" />
+      <wsdl:output message="tns:RedeemPointsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <wsdl:input message="tns:InquireCRMScoreHttpGetIn" />
+      <wsdl:output message="tns:InquireCRMScoreHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <wsdl:input message="tns:UndoRedemptionHttpGetIn" />
+      <wsdl:output message="tns:UndoRedemptionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <wsdl:input message="tns:UpdateMLCardHttpGetIn" />
+      <wsdl:output message="tns:UpdateMLCardHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MLRewardsRedeemHttpPost">
+    <wsdl:operation name="InquirePoints">
+      <wsdl:input message="tns:InquirePointsHttpPostIn" />
+      <wsdl:output message="tns:InquirePointsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <wsdl:input message="tns:RedeemPointsHttpPostIn" />
+      <wsdl:output message="tns:RedeemPointsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <wsdl:input message="tns:InquireCRMScoreHttpPostIn" />
+      <wsdl:output message="tns:InquireCRMScoreHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <wsdl:input message="tns:UndoRedemptionHttpPostIn" />
+      <wsdl:output message="tns:UndoRedemptionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <wsdl:input message="tns:UpdateMLCardHttpPostIn" />
+      <wsdl:output message="tns:UpdateMLCardHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLRewardsRedeemSoap" type="tns:MLRewardsRedeemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InquirePoints">
+      <soap:operation soapAction="MLhuillierRewards/InquirePoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <soap:operation soapAction="MLhuillierRewards/RedeemPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <soap:operation soapAction="MLhuillierRewards/InquireCRMScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <soap:operation soapAction="MLhuillierRewards/UndoRedemption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <soap:operation soapAction="MLhuillierRewards/UpdateMLCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MLRewardsRedeemSoap12" type="tns:MLRewardsRedeemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InquirePoints">
+      <soap12:operation soapAction="MLhuillierRewards/InquirePoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <soap12:operation soapAction="MLhuillierRewards/RedeemPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <soap12:operation soapAction="MLhuillierRewards/InquireCRMScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <soap12:operation soapAction="MLhuillierRewards/UndoRedemption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <soap12:operation soapAction="MLhuillierRewards/UpdateMLCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MLRewardsRedeemHttpGet" type="tns:MLRewardsRedeemHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="InquirePoints">
+      <http:operation location="/InquirePoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <http:operation location="/RedeemPoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <http:operation location="/InquireCRMScore" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <http:operation location="/UndoRedemption" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <http:operation location="/UpdateMLCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MLRewardsRedeemHttpPost" type="tns:MLRewardsRedeemHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="InquirePoints">
+      <http:operation location="/InquirePoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <http:operation location="/RedeemPoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireCRMScore">
+      <http:operation location="/InquireCRMScore" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UndoRedemption">
+      <http:operation location="/UndoRedemption" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLCard">
+      <http:operation location="/UpdateMLCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLRewardsRedeem">
+    <wsdl:port name="MLRewardsRedeemSoap" binding="tns:MLRewardsRedeemSoap">
+      <soap:address location="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MLRewardsRedeemSoap12" binding="tns:MLRewardsRedeemSoap12">
+      <soap12:address location="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MLRewardsRedeemHttpGet" binding="tns:MLRewardsRedeemHttpGet">
+      <http:address location="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MLRewardsRedeemHttpPost" binding="tns:MLRewardsRedeemHttpPost">
+      <http:address location="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

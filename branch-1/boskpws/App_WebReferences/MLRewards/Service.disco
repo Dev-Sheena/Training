@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx?wsdl" docRef="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" xmlns:q1="MLhuillierRewards" binding="q1:MLRewardsRedeemSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://192.168.17.101/CRMScoreMLRewardsRedeemService/Service.asmx" xmlns:q2="MLhuillierRewards" binding="q2:MLRewardsRedeemSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
